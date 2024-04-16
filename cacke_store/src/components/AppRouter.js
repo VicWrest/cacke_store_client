@@ -1,20 +1,20 @@
 import {Route, Routes, Navigate} from 'react-router-dom'
 import {adminRoutes, publicRoutes} from "../routes";
-import {SHOP_ROUTE} from "../utils/consts";
+import { useContext } from 'react';
+import { Context } from '../index';
 //import {observer} from "mobx-react-lite";
 
 const AppRouter = () => {
-    const isAdmin = true;
+    const {user} = useContext(Context)
     return (
       <Routes>
-      {isAdmin && adminRoutes.map(({path, Component}) =>
-      <Route key={path} path={path} component={Component} exact/>
-            )}
+      {user.isAdmin && adminRoutes.map(({path, Component}) =>
+        <Route key={path} path={path} element={<Component/>} exact/>
+      )}
       {publicRoutes.map(({path, Component}) =>
-        <Route key={path} path={path} component={Component} exact/>
-            )}
-        <Navigate to={SHOP_ROUTE}/>
-    <Route path="/" element={() => <Navigate to={SHOP_ROUTE}/>} />
+            <Route key={path} path={path} element={<Component/>} exact/>
+      )}
+        <Route path="*" element={<Navigate to ="/" />}/>
         </Routes>
     );
 };

@@ -1,8 +1,8 @@
 import Admin from "./pages/Admin";
-import {ADMIN_ROUTE, BASKET_ROUTE, PRODUCT_ROUTE, SHOP_ROUTE} from "./utils/consts";
-import Basket from "./pages/Basket";
-import Shop from "./pages/Shop";
+import {ADMIN_ROUTE, BASKET_ROUTE, PRODUCTS_ROUTE, PRODUCT_ROUTE, SHOP_ROUTE} from "./utils/consts";
 import ProductPage from "./pages/ProductPage";
+import Basket from "./pages/Basket";
+import Catalog from "./pages/Catalog/Catalog";
 
 export const adminRoutes = [
     {
@@ -14,7 +14,7 @@ export const adminRoutes = [
 export const publicRoutes = [
     {
         path: SHOP_ROUTE,
-        Component: Shop
+        Component: Catalog
     },
     {
         path: PRODUCT_ROUTE + '/:id',
@@ -23,5 +23,10 @@ export const publicRoutes = [
     {
         path: BASKET_ROUTE,
         Component: Basket
-    }
+    },
+    {
+        path: PRODUCTS_ROUTE + '/:type',
+        Component: PRODUCTS_ROUTE
+    },
+    
 ]

@@ -1,8 +1,11 @@
 
 
 function Basket() {
+  console.log('render Basket')
   return (
-   "Basket"
+    <div>
+      Basket
+    </div>
   );
 }
 

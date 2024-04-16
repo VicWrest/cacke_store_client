@@ -1,0 +1,5 @@
+.typeBar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
