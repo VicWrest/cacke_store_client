@@ -1,18 +1,13 @@
 import React, {useContext, useEffect} from 'react';
-import {Container} from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import {observer} from "mobx-react-lite";
+import ProductList from '../../components/ProductList/ProductList.js';
 
-function Shop() {
+const products = observer(() => {
   return (
-   <Container>
-    <Row>
-      <Col md={3}>
-        Shop
-      </Col>
-    </Row>
-   </Container>
+     <div>
+       <ProductList />
+     </div>
   );
-}
+})
 
-export default Shop;
+export default products;

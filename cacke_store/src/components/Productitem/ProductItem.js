@@ -1,21 +1,28 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {observer} from "mobx-react-lite";
-import {Context} from "../../index.js";
-import TypeItem from '../TypeItem/TypeItem.js';
-import "./TypeBar.css"
+import "./ProductItem.css"
+import Button from "../Button/Button.js"
+import {PRODUCT_ROUTE} from 
 
-const ProductItem = observer(({product, ProductItem}) => {
+const ProductItem = observer(({product, productItem}) => {
+const history = useHistory();
     return (
         <div 
-        className='product-item'
-        >
-            <div className='procuct-img' style={{ backgroundImage: `url(${ProductItem.img})`}}>
+        className='product-list'
+        onClick={()=> history.push(PRODUCT_ROUTE + '/' + product.id) }>
+            <div className='procuct-img' style={{ backgroundImage: `url(${productItem.img})`}}>
             </div>
-            <div className='type-name'>
-                {ProductItem.name}
+            <div className="product-item">
+                <div className='product-name'>
+                {productItem.name}
             </div>
-            <div className='price'>{ProductItem.price}</div>
+            <div className='price'>{productItem.price}</div>
+            <Button className='add-btn'>
+                Добавить в корзину
+            </Button>
         </div>     
+            </div>
+            
     );
 });
 

@@ -3,6 +3,7 @@ import {ADMIN_ROUTE, BASKET_ROUTE, PRODUCTS_ROUTE, PRODUCT_ROUTE, SHOP_ROUTE} fr
 import ProductPage from "./pages/ProductPage";
 import Basket from "./pages/Basket";
 import Catalog from "./pages/Catalog/Catalog";
+import Products from "./pages/Products/Products.js";
 
 export const adminRoutes = [
     {
@@ -26,7 +27,7 @@ export const publicRoutes = [
     },
     {
         path: PRODUCTS_ROUTE + '/:type',
-        Component: PRODUCTS_ROUTE
+        Component: Products
     },
     
 ]
