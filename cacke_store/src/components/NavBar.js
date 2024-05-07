@@ -5,10 +5,12 @@ import Nav from "react-bootstrap/Nav";
 import {NavLink} from "react-router-dom";
 import {Button} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
-import { SHOP_ROUTE } from '../utils/consts';
+import { ADMIN_ROUTE, BASKET_ROUTE, REWIEW_ROUTE, SHOP_ROUTE } from '../utils/consts';
+import {useNavigate} from "react-router-dom";
 
 const NavBar = () => {
     const {user} = useContext(Context)
+    const history = useNavigate()
     return (
         <Navbar bg="dark" variant="dark">
         <Container>
@@ -18,14 +20,15 @@ const NavBar = () => {
                 <Nav className="ml-auto" style={{color: 'white'}}>
                     <Button
                         variant={"outline-light"}
-                        onClick={() => {}}
+                        onClick={() => history(ADMIN_ROUTE)}
                     >
                         Админ панель
                     </Button>
                 </Nav>
                 :
                 <Nav className="ml-auto" style={{color: 'white'}}>
-                    <Button variant={"outline-light"} onClick={{}}>Корзина</Button>
+                    <Button className="mr-3" variant={"outline-light"} onClick={()=>history(REWIEW_ROUTE)}>Отзывы</Button>
+                    <Button variant={"outline-light"} onClick={()=>history(BASKET_ROUTE)}>Корзина</Button>
                 </Nav>
             }
         </Container>

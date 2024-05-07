@@ -1,13 +1,15 @@
 import React, {useContext, useEffect} from 'react';
 import {observer} from "mobx-react-lite";
+import "./Products.css"
 import ProductList from '../../components/ProductList/ProductList.js';
+import ProductPage from '../ProductPage.js';
 
-const products = observer(() => {
+const Products = observer(() => {
   return (
-     <div>
-       <ProductList />
-     </div>
+   <div className='products'>
+    <ProductList />
+   </div>
   );
 })
 
-export default products;
+export default Products;

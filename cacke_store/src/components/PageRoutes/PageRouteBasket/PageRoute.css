@@ -1,0 +1,13 @@
+.go-back{
+    display: flex;
+    margin-top: 3%;
+    margin-left: 40px;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #FE5B00;
+}

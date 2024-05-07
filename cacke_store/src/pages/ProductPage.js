@@ -1,8 +1,14 @@
+import PageRoute from "../components/PageRoutes/PageRouteProductCard/PageRoute";
+import ProductCard from "../components/ProductCard/ProductCard";
 
 
 function ProductPage() {
   return (
-   "ProductPage"
+    <div>
+      <PageRoute />
+      <ProductCard />
+    </div>
+   
   );
 }
 

@@ -1,0 +1,79 @@
+.basket-window{
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+    border-radius: 2px;
+}
+.MyBasket{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+
+}
+.my-basket-string{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Orenburg';
+    font-size: 32px;
+    line-height: 36px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.5px;
+    color: #151716;
+
+}
+
+.productList{
+    width: 70%;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+      padding: 10px;
+  }
+th {
+    text-align: center;
+    padding: 10px;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #7B7B7B;
+
+
+}
+.product-name-basket{
+    width: 550px;
+    text-align: left;
+}
+.quantity-cell{
+    width: 200px;
+}
+.product-price{
+    width: 200px;
+}
+
+.basket-is-empty{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-family: 'Orenburg';
+    font-size: 32px;
+    line-height: 36px;
+    color: #151716;
+}
+.line{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #f00;
+    padding-top: 20px;
+    background: #FCFCFC;
+    box-shadow: inset 0px 1px 0px #ECECEC;
+}

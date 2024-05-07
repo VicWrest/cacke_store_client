@@ -7,11 +7,11 @@ import ProductItem from '../Productitem/ProductItem.js';
 const ProductList = observer(() => {
     const {product} = useContext(Context)
     return (
-    <div className="product-list">
+    <div key={'product-list'}className="product-list">
             {product.products.map(productItem =>
                     <ProductItem
-                    product={product} 
                     key={product.id} 
+                    product={product} 
                     productItem={productItem}/>
             )}
             </div>

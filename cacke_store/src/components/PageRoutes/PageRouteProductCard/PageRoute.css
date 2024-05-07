@@ -1,0 +1,27 @@
+.page-route{
+    display: flex;
+    margin-top: 2px;
+    background: #FFFFFF;
+    box-shadow: inset 0px -1px 0px #ECECEC;
+
+}
+.main-page .type-page .product-page{
+    margin-left: 15px;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #7B7B7B;
+    cursor: pointer;
+
+
+}
+.arrow {
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #7B7B7B;
+    padding-bottom: 3px;
+
+}

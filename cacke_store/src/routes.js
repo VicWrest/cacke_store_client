@@ -1,9 +1,10 @@
-import Admin from "./pages/Admin";
-import {ADMIN_ROUTE, BASKET_ROUTE, PRODUCTS_ROUTE, PRODUCT_ROUTE, SHOP_ROUTE} from "./utils/consts";
+import Admin from "./pages/Admin/Admin.js";
+import {ADMIN_ROUTE, BASKET_ROUTE, PRODUCTS_ROUTE, PRODUCT_ROUTE, REWIEW_ROUTE, SHOP_ROUTE} from "./utils/consts";
 import ProductPage from "./pages/ProductPage";
-import Basket from "./pages/Basket";
+import Basket from "./pages/Basket/Basket.js";
 import Catalog from "./pages/Catalog/Catalog";
 import Products from "./pages/Products/Products.js";
+import Review from "./pages/Review/Review.js";
 
 export const adminRoutes = [
     {
@@ -18,7 +19,7 @@ export const publicRoutes = [
         Component: Catalog
     },
     {
-        path: PRODUCT_ROUTE + '/:id',
+        path: PRODUCT_ROUTE + '/:type/:id',
         Component: ProductPage
     },
     {
@@ -29,5 +30,9 @@ export const publicRoutes = [
         path: PRODUCTS_ROUTE + '/:type',
         Component: Products
     },
+    {
+        path: REWIEW_ROUTE,
+        Component: Review
+    }
     
 ]

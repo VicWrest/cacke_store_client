@@ -1,0 +1,30 @@
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.product-in-basket-img{
+    width: 100px;
+    height: 144px;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+.product-in-basket{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.quantity-product-cell{
+    display: flex;
+    justify-content: flex-end;
+}
+.delete-img{
+    width: 20px;
+    height: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+}
+.product-name-in-basket{
+    padding-left: 15px;
+}
