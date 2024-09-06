@@ -12,8 +12,10 @@
     height: 44px;
       background-repeat: no-repeat;
       background-size: cover;
+      cursor: pointer;
 }
 .quantity-text{
+    margin-top: 5px;
     width: 8px;
     height: 24px;
 }

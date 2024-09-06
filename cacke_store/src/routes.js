@@ -19,7 +19,7 @@ export const publicRoutes = [
         Component: Catalog
     },
     {
-        path: PRODUCT_ROUTE + '/:type/:id',
+        path: PRODUCT_ROUTE + '/:typeId/:productId',
         Component: ProductPage
     },
     {
@@ -27,7 +27,7 @@ export const publicRoutes = [
         Component: Basket
     },
     {
-        path: PRODUCTS_ROUTE + '/:type',
+        path: PRODUCTS_ROUTE + '/:typeId',
         Component: Products
     },
     {

@@ -5,6 +5,7 @@ import UserStore from './store/UserStore';
 import ProductStore from './store/ProductStore';
 import BasketStore from './store/BasketStore';
 import ReviewStore from './store/ReviewStore';
+import ErrorStore from './store/ErrorStore';
 
 export const Context = createContext(null);
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +14,8 @@ root.render(
     user: new UserStore(),
     product: new ProductStore(),
     basket: new BasketStore(),
-    review: new ReviewStore()
+    review: new ReviewStore(),
+    errors: new ErrorStore()
   }}>
     <App />
     </Context.Provider>

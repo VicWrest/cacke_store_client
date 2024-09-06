@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { memo, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import {Context} from "../../index.js";
+import { observer } from 'mobx-react-lite';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -14,16 +16,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DateAndTimePickers() {
+const SelectDate = observer(() => {
+  const {basket} = useContext(Context);
   const classes = useStyles();
-
+  
+  const changeTime = async (date) => {
+    let utcDate = new Date(date).toISOString();
+    await basket.setDate(utcDate);
+    return;
+  }
   return (
-    <form className={classes.container} noValidate>
-      <TextField
+    <form 
+      className={classes.container} 
+      onChange={(e)=> changeTime(e.target.value)} 
+      noValidate>
+        <TextField
             id="datetime-local"
             label="Сделать к"
             type="datetime-local"
-            defaultValue="2024-01-01T10:30"
+            defaultValue={basket.date}
             className={classes.textField}
             InputLabelProps={{
             shrink: true,
@@ -31,4 +42,6 @@ export default function DateAndTimePickers() {
       />
     </form>
   );
-}
+})
+
+export default SelectDate;

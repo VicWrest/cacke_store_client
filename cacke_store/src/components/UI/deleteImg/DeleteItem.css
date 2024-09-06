@@ -1,0 +1,12 @@
+.delete-img{
+    width: 20px;
+    height: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+}
+
+.delete-img:hover{
+    background: linear-gradient(90deg, rgb(255, 157, 129) 24.3%, rgb(255, 78, 78) 78.3%);  
+    border-bottom: 2px solid #fc5a5a;
+  }

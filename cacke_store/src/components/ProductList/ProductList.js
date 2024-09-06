@@ -10,11 +10,11 @@ const ProductList = observer(() => {
     <div key={'product-list'}className="product-list">
             {product.products.map(productItem =>
                     <ProductItem
-                    key={product.id} 
+                    key={productItem.id} 
                     product={product} 
                     productItem={productItem}/>
             )}
-            </div>
+        </div>
     );
 });
 

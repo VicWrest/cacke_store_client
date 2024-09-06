@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {Context} from "../../../index";
 import './PageRoute.css'
 import { useNavigate } from 'react-router-dom';
-import { SHOP_ROUTE } from '../../../utils/consts';
+import { PRODUCTS_ROUTE, SHOP_ROUTE } from '../../../utils/consts';
 
 const PageRoute = () => {
     const {product} = useContext(Context);
@@ -14,7 +14,9 @@ const PageRoute = () => {
             onClick={()=>navigate(SHOP_ROUTE
             )}>Главная</div>
             <div className='arrow'>&rsaquo;</div>
-            <div className='type-page'>{product.selectedType.name}</div>
+            <div className='type-page' onClick={()=>navigate(PRODUCTS_ROUTE + '/' + product.selectedType.id)}>
+                {product.selectedType.name}
+            </div>
             {product.selectedType.name?
             <div className='arrow'>&rsaquo;</div>:null
             }

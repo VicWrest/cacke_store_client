@@ -2,22 +2,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 3px;
+   margin-bottom: 90px;
 }
 
 .place-order-btn{
         text-decoration: none;
         display: inline-block;
         padding: 0 12px;
-        background: #FF7028;
+        background: orangered;
         border-radius: 2px;
         color: white;
         text-transform: uppercase;
         font-size: 12px;
         line-height: 28px;
         transition: .3s ease-in;
+        width: 350px;
+        height: 50px;
 }
 .place-order-btn:hover{
-    background: #fc5a5a;
+    background: orangered;
  }
  .itogo{
     font-family: 'PT Sans';
@@ -30,5 +34,11 @@
     color: #7B7B7B;
 
 
+ }
+
+ .placing-in-order{
+    display: flex;
+    flex-direction: column;
+    align-items: center
  }
  

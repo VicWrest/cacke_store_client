@@ -1,23 +1,36 @@
-
-import React from 'react';
+import React, { useContext } from 'react';
 import {observer} from "mobx-react-lite";
 import "./TypeItem.css"
-import Button from "../Button/Button.js"
-import { PRODUCTS_ROUTE, PRODUCT_ROUTE } from '../../utils/consts.js';
+import { PRODUCTS_ROUTE} from '../../utils/consts.js';
 import {useNavigate} from "react-router-dom";
+import DeleteItem from '../UI/deleteImg/DeleteItem.js';
+import {Context} from "../../index.js";
+import { deleteTypeById } from '../../http/productAPI.js';
 
 //productItem элемент массива products
 //product - контекст
-const ProductItem = observer(({product, type}) => {
-const history = useNavigate()
+const TypeItem = observer(({type}) => {
+const {user, product, errors} = useContext(Context)
+const history = useNavigate();
+
+const deleteType = () => {
+    deleteTypeById(type.id)
+    .then(types => product.setTypes(types))
+    .catch(err => errors.setError(err))
+}
     return (
         <div 
             className='type-item'
             onClick={()=> {
-                history(PRODUCTS_ROUTE + '/type/'); 
+                history(PRODUCTS_ROUTE + '/' + type.id); 
                 product.setSelectedType(type);
                 return;}}>
-                <div className='type-img' style={{ backgroundImage: `url(${type.img})`}}></div>
+                <div className='type-img' style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL+type.img})`}}>
+                    {user.isAdmin && <DeleteItem onClick={(event) => {
+                        event.stopPropagation();
+                        return deleteType();
+                        }} />}
+                </div>
                 <div className='type-name'>
                     {type.name}
                 </div>    
@@ -25,33 +38,7 @@ const history = useNavigate()
     );
 });
 
-export default ProductItem;
+export default TypeItem;
 
 
 
-
-
-
-// import React, {useContext} from 'react';
-// import {observer} from "mobx-react-lite";
-// import {Context} from "../../index";
-// import {Card, Row, Col} from "react-bootstrap";
-// import "./TypeItem.css"
-
-// const TypeItem = observer(({type, product}) => {
-//     return (
-//             <div 
-//             className='type-item'
-//             onClick={()=> product.setSelectedType(type)}
-//             >
-//                 <div className='type-img' style={{ backgroundImage: `url(${type.img})`}}>
-//                 </div>
-//                 <div className='type-name'>
-//                     {type.name}
-//                 </div>    
-//             </div>
-                
-//         )}
-//     );
-
-// export default TypeItem;

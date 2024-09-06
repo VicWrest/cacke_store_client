@@ -1,42 +1,35 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import './Review.css'
-import { AddPostForm } from "../../components/Review/AddNewReview/AddNewReview";
-import CircularProgress from '@material-ui/core/CircularProgress';
 import ReviewsList from "../../components/Review/ReviewsList/ReviewsList";
-
+import {Container} from "react-bootstrap";
+import CreateReview from "../../components/modals/CreateReview";
+import { getAllReview } from "../../http/reviewAPI";
+import {Context} from "../../index";
 
 function Review() {
-  const [showAddForm, setShowAddForm] = useState(false);
+  const [reviewVisible, setReviewVisible] = useState(false)
+  const {review} = useContext(Context);
 
-  const handleAddFormShow = () => {
-    setShowAddForm(true);
-  };
+  useEffect(()=>{
+    getAllReview().then((reviews) => review.addReviews(reviews))
+    .catch(err => err)
+  }, [])
 
   return (
-      <div className='blogPage'>
-          {showAddForm && (
-          <AddPostForm
-            // addNewBlogPost={addNewBlogPost}
-            // handleAddFormHide={handleAddFormHide}
-          />) }
-  
-        {/* {showEditForm && (
-          <EditPostForm
-            handleEditFormHide={handleEditFormHide}
-            selectedPost={selectedPost}
-            editBlogPost={editBlogPost}
-          />
-        )} */}
-  
+      <div className='reviewPage'>
         <>
-          <h1 className="review-str">Отзывы</h1>
-  
-            <div className='addNewPost'>
-              <button className='blackBtn' onClick={handleAddFormShow}>
-                Создать новый пост
-              </button>
-            </div>
-  
+          <h1 className="reviews-str">Отзывы</h1>
+          <Container className="d-flex justify-content-center">
+            <button
+            className="new-review-btn" 
+            type="button" 
+            class="btn btn-outline-warning"
+            onClick={() => setReviewVisible(true)}
+            >
+              Новый отзыв
+            </button>
+            <CreateReview show={reviewVisible} onHide={()=> setReviewVisible(false)} />
+            </Container>
           <div className='posts' >
               <ReviewsList />
           </div>

@@ -10,46 +10,21 @@ const ReviewsList = observer(()=> {
     const {review} = useContext(Context)
     const {product} = useContext(Context)
 
-    const [showAddForm, setShowAddForm] = useState(false);
-    const [showEditForm, setShowEditForm] = useState(false);
-    const [selectedPost, setSelectedPost] = useState({});
-
-      const deletePost = (blogPost) => {
-        if (window.confirm(`Удалить ${blogPost.title}?`)) {
-          //deleteMutation.mutate(blogPost)
-        }
-      };
-
-      const handleAddFormShow = () => {
-        setShowAddForm(true);
-      };
-    
-      const handleAddFormHide = () => {
-        setShowAddForm(false);
-      };
-    
-      const handleEditFormShow = () => {
-        setShowEditForm(true);
-      };
-    
-      const handleEditFormHide = () => {
-        setShowEditForm(false);
-      };
       return (
-        <div key={'reviews-list'}className="product-list">
+        <div key={'reviews-list'}className="review-list">
             {review.reviews.map(item =>{
             return (
                 <React.Fragment key={item.id}>
         <PostCard
+          id={item.id}
+          authorName={item.authorName}
           description={item.description}
-        //   deletePost={() => deletePost(item)}
-        //   handleEditFormShow={handleEditFormShow}
-        //   handleSelectPost={() => handleSelectPost(item)}
+          img={item.img}
         />
       </React.Fragment>
     )})
     }
-        </div>
+      </div>
 );
 })
 

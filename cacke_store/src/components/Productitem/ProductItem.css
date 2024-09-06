@@ -7,6 +7,7 @@
    background: white;
    font-family: "Open Sans";
    transition: .3s ease-in; 
+   cursor: pointer;
 }
 .product-item:hover {
    border-bottom: 2px solid #fc5a5a;
@@ -29,13 +30,19 @@
    margin: 0 0 10px 0;
 }
 .price {
-   font-size: 16px;
-   color: #fc5a5a;
+   font-size: 25px;
+   color: orangered;
    display: block;
-   margin-bottom: 12px;
+   font-family: 'Impact';
+   line-height: 36px;
+   
+
 }
 .product-name{
    margin-top: 3%;
+   font-family: 'Courier New';
+   font-size: 16px;
+   line-height: 36px;
 }
 .add-btn {
    text-decoration: none;
@@ -49,6 +56,6 @@
    transition: .3s ease-in;
 }
 .product-item:hover .add-btn {
-   background: #fc5a5a;
+   background: orangered;
 }
 

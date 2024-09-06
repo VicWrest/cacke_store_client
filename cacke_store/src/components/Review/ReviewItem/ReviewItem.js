@@ -1,39 +1,29 @@
 import './ReviewItem.css';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
-import EditIcon from '@material-ui/icons/Edit';
+import EnLargeImg from '../../modals/EnLargeImg';
+import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
 
-export const PostCard = ({
-  title,
+export const PostCard = observer(({
+  id,
+  authorName,
   description,
-  deletePost,
-  handleEditFormShow,
-  handleSelectPost,
-  isAdmin,
+  img,
 }) => {
-  const showEditForm = () => {
-    handleSelectPost();
-    handleEditFormShow();
-  };
+  const [imgVisible, setImgVisible] = useState(false);
 
   return (
-    <div className='post'>
+    <div className='review'>
       <div className='postContent'>
-        <h2>{title}</h2>
+        <h2 className='username-in-review'>{authorName}</h2>
+        <p className='comment-str'>Комментарии</p>
         <p>{description}</p>
-        <div>
-    </div>
-      </div>
-      {isAdmin && (
-        <div className='postControl'>
-          <button className='editBtn' onClick={showEditForm}>
-            <EditIcon />
-          </button>
-          <button className='deleteBtn' onClick={deletePost}>
-            <DeleteForeverIcon />
-          </button>
+        {img &&
+          <div className='review-img' style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL+img})`}} onClick={()=> {setImgVisible(true)} }></div>
+        }
+        <div className='modal-large-img'>
+        <EnLargeImg show={imgVisible} onHide={()=> setImgVisible(false)} img={img}/>
         </div>
-      )}
+      </div>
     </div>
   );
-};
+})

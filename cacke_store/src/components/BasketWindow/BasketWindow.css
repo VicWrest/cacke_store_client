@@ -17,7 +17,7 @@
 .my-basket-string{
     margin-top: 2%;
     margin-bottom: 2%;
-    font-family: 'Orenburg';
+    font-family: 'Impact';
     font-size: 32px;
     line-height: 36px;
     align-items: center;
@@ -49,9 +49,10 @@ th {
 }
 .product-name-basket{
     width: 550px;
-    text-align: left;
+    text-align: center;
 }
 .quantity-cell{
+    margin-left: 20px;
     width: 200px;
 }
 .product-price{
@@ -63,13 +64,13 @@ th {
     justify-content: center;
     margin-top: 200px;
     margin-bottom: 200px;
-    font-family: 'Orenburg';
+    font-family: 'Impact';
     font-size: 32px;
     line-height: 36px;
     color: #151716;
 }
 .line{
-    width: 70%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid #f00;
