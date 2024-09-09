@@ -39,10 +39,8 @@ const CreateProduct = observer(({show, onHide}) => {
 
     }
     const addNewProduct = () => {
-        //форма, как в постмане, чтобы файлы отправлять
         const formData = new FormData()
         formData.append('name', name)
-        formData.append('price', `${price}`)
         formData.append('description', `${description}`)
         formData.append('shortdescription', `${shortDescription}`)
         formData.append('img', file)
@@ -51,7 +49,7 @@ const CreateProduct = observer(({show, onHide}) => {
         formData.append('weight', JSON.stringify(weight))
         createNewProduct(formData)
         .then((products)=>{
-            product.setProducts(products);
+            //product.setProducts(products); думаю нет в жтом смысла
             onHide();
             window.location.reload();
         })

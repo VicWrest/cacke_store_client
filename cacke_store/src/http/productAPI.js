@@ -11,6 +11,7 @@ export const getTypes = async () => {
 }
 
 export const deleteTypeById = async (typeId) => {
+    console.log(typeId)
     const {data} = await $authHost.delete('api/type/'+typeId, {withCredentials: true})
     return data;
 }

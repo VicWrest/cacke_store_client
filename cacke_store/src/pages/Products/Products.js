@@ -19,6 +19,7 @@ const Products = observer(() => {
     }
     getProducts(typeId)
     .then(data => {
+      console.log(data)
       product.setProducts(data)
       });
   }, [product.selectedType]);

@@ -3,7 +3,7 @@ import {Context} from "../../index";
 import './ProductCard.css'
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
-import { addProductToBasket, getKorzhType } from '../../http/productAPI';
+import { getKorzhType } from '../../http/productAPI';
 import CompleteAddProduct from '../modals/completedAddProduct';
 import { observer } from 'mobx-react-lite';
 import ProductCharacteristic from '../ProductCharacteristics/ProductCharacteristics';
@@ -14,9 +14,9 @@ const ProductCard = observer(({productItem}) => {
     const navigate = useNavigate();
 
     const [korzhId, setKorzhId] = useState(1);
-    const [weightId, setWeightId] = useState(productItem.weight[0].id);
+    const [weightId, setWeightId] = useState(productItem.weights[0].id);
     const [strVisible, setStrVisible] = useState(false)
-    const [price, setPrice] = useState(productItem.weight[0].price)
+    const [price, setPrice] = useState(productItem.weights[0].price)
     
     useEffect(()=>{
         getKorzhType()
@@ -38,7 +38,7 @@ const ProductCard = observer(({productItem}) => {
                 <div className='price'>{price}</div>
                 <Button className='add-btns1'
                 onClick={()=>{
-                    basket.addToBasket(productItem, korzhId, weightId)
+                    basket.addToBasket({productItem, korzhId, weightId})
                     setStrVisible(true);
                 } 
                 }>

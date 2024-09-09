@@ -24,8 +24,8 @@
 }
 .review-img{
     cursor: pointer;
-    width: 300px;
-    height: 300px;
+    width: 25%;
+    height: 25%;
     background-repeat: no-repeat;
     background-size: cover;
 }

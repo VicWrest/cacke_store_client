@@ -44,7 +44,7 @@ const deleteProductById = () => {
                 <div className='product-name'>
                     {productItem.name}
                 </div>    
-                <div className='price'>{productItem.weight[0].price}</div>
+                <div className='price'>{productItem.weights[0].price}</div>
             </div>
             <Button 
             className='add-btn' 

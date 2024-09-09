@@ -20,9 +20,10 @@ async setPhone(phone){
      this._phone = phone;
 };
 async addToBasket({productItem, korzhId, weightId}){
-     if(!weightId) weightId = productItem.weight[0].id;
+     if(!weightId) weightId = productItem.weights[0].id;
      addProductToBasket({productId: productItem.id, korzhId, weightId})
-     .then(products => this.setAllProducts(products))
+     .then(products => {
+          this.setAllProducts(products)})
 };
 
    removeAdBasket(product){

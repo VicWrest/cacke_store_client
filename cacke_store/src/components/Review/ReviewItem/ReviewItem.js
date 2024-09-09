@@ -10,7 +10,6 @@ export const PostCard = observer(({
   img,
 }) => {
   const [imgVisible, setImgVisible] = useState(false);
-
   return (
     <div className='review'>
       <div className='postContent'>
@@ -18,7 +17,7 @@ export const PostCard = observer(({
         <p className='comment-str'>Комментарии</p>
         <p>{description}</p>
         {img &&
-          <div className='review-img' style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL+img})`}} onClick={()=> {setImgVisible(true)} }></div>
+          <img className='review-img' src={`${process.env.REACT_APP_API_URL+img}`} onClick={()=> {setImgVisible(true)}}/> 
         }
         <div className='modal-large-img'>
         <EnLargeImg show={imgVisible} onHide={()=> setImgVisible(false)} img={img}/>

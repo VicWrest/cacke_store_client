@@ -12,7 +12,7 @@ const EnLargeImg = ({show, onHide, img}) => {
         >
             <Modal.Body>
                 <div className='div-large-img' >
-                    <img className='large-img' src={img}></img>
+                    <img className='large-img' src={`${process.env.REACT_APP_API_URL+img}`}></img>
                 </div>
                 
             </Modal.Body>

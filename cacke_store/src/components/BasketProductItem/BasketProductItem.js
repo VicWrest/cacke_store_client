@@ -3,7 +3,6 @@ import {observer} from "mobx-react-lite";
 import {Context} from "../../index.js";
 import "./BasketProductItem.css"
 import QuantityItem from '../ItemQuantity/ItemQuantity.js';
-import deleteImg from '../../assets/delete.png';
 import { deleteProductById, getKorzhType, updateProductData, updateProductKorzh } from '../../http/productAPI.js';
 import DeleteItem from '../UI/deleteImg/DeleteItem.js';
 import SelectWeight from '../SelectWeight/SelectWeight.js';
