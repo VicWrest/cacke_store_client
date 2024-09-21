@@ -52,8 +52,8 @@ async addToBasket({productItem, korzhId, weightId}){
    }
    get totalPrice() {
      return this._addProducts.reduce((acc, item) => {
-          const price = item.basket_product.weight.price;
-          const quantity = item.basket_product.quantity;
+          const price = item.weight.price;
+          const quantity = item.quantity;
        return acc += price * quantity;
      }, 0)
    };

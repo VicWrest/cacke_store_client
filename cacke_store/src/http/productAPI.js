@@ -27,7 +27,6 @@ export const getProducts = async (typeId) => {
         return data;
     }
     catch(err){
-        // console.log(err);
         return new Error;
     }
     
@@ -61,11 +60,26 @@ export const addProductToBasket = async (product) => {
 
 export const getProductsInBasket = async () => {
     const {data} = await $authHost.get('api/basket/', {withCredentials: true});
+    console.log(data)
     return data;
 }
 
-export const updateProductData = async (body) => {
-    const {data} = await $authHost.put('api/basket/korzh', body, {withCredentials: true})
+export const increment = async (body) => {
+    const {productId, weightId, korzhId} = body;
+    const {data} = await $authHost.put('api/basket/'+productId + '/increment', {korzhId, weightId}, {withCredentials: true})
+    return data;
+}
+
+export const decrement = async (body) => {
+    const {productId, weightId, korzhId} = body;
+    const {data} = await $authHost.put('api/basket/'+productId + '/decrement', {korzhId, weightId}, {withCredentials: true})
+    return data;
+}
+
+export const updateProductData = async (formData) => {
+    const {productId} = formData;
+    const body = {korzhId: formData.korzhId, weightId: formData.weightId}
+    const {data} = await $authHost.put('api/basket/'+productId +'/update', body, {withCredentials: true})
     return data;
 }
 

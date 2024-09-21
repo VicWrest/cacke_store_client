@@ -22,10 +22,13 @@ $authHost.interceptors.request.use(authInterceptor);
 $authHost.interceptors.response.use((config) => {
     return config;
 },async (err) => {
+    if(!err?.response){
+        return Promise.reject({...error, data: "Нет ответа от сервера"})
+    }
     const error = err.response;
+    console.log(error)
     if (err.response.status == 400 || err.response.status == 401) {
         try {
-            console.log(error)
             return Promise.reject(error);
         } catch (e) {
             console.log(e)

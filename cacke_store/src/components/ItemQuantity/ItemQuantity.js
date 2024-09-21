@@ -5,26 +5,20 @@ import "./ItemQuantity.css"
 import rectangle from '../../assets/Rectangle.png'
 import btnLess from '../../assets/btn-less.png'
 import btnMore from '../../assets/btn-more.png'
-import { updateProductData, updateProductQuantity } from '../../http/productAPI.js';
+import { decrement, increment, updateProductData, updateProductQuantity } from '../../http/productAPI.js';
 
 const QuantityItem = observer(({product, setQuant}) => {
-    const {basket} = useContext(Context)
-    const [quantity, setQuantity] = useState(product.basket_product.quantity);
-    const changeQuantity = useRef(false);
-    
-    useEffect(() => {
-        if(changeQuantity.current){
-            updateProductData({
-                id: product.basket_product.id, 
-                quantity, 
-                korzhId: product.basket_product.korzhId,
-                weightId: product.basket_product.weightId
-            })
-            .then(products => basket.setAllProducts(products))
-        }
-        changeQuantity.current = true;
-        return;
-    }, [quantity]);
+    const {basket, errors} = useContext(Context)
+    const [quantity, setQuantity] = useState(product.quantity);
+    const incr = (body) => {
+        increment(body).then(products => basket.setAllProducts(products))
+        .catch(err => errors.setError(err))
+    }
+
+    const decr = (body) => {
+        decrement(body).then(products => basket.setAllProducts(products))
+        .catch(err => errors.setError(err))
+        } 
 
     return (
         <div className='quantity-product-cell'>
@@ -34,6 +28,7 @@ const QuantityItem = observer(({product, setQuant}) => {
                     onClick={() => {
                         setQuantity(quantity - 1 > 0? quantity - 1 : quantity)
                         setQuant(quantity);
+                        decr({productId: product.id, korzhId: product.korzhId, weightId: product.weightId})
                         return
                         }} ></div>
                 <div className='quantity-text'>{quantity}</div>
@@ -41,6 +36,7 @@ const QuantityItem = observer(({product, setQuant}) => {
                 onClick={() => {
                     setQuantity(quantity + 1);
                     setQuant(quantity);
+                    incr({productId: product.id, korzhId: product.korzhId, weightId: product.weightId});
                     return
                     }}></div>
             </div>

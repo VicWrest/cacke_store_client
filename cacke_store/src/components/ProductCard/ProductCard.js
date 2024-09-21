@@ -10,7 +10,7 @@ import ProductCharacteristic from '../ProductCharacteristics/ProductCharacterist
 import SelectWeight from '../SelectWeight/SelectWeight';
 
 const ProductCard = observer(({productItem}) => {
-    const {basket, product} = useContext(Context);
+    const {basket, product, errors} = useContext(Context);
     const navigate = useNavigate();
 
     const [korzhId, setKorzhId] = useState(1);
@@ -21,6 +21,7 @@ const ProductCard = observer(({productItem}) => {
     useEffect(()=>{
         getKorzhType()
         .then(data => product.setKorzh(data))
+        .catch(err => errors.setError(err))
     }, [])
 
     const updatePrice = price => {

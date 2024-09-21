@@ -10,15 +10,18 @@ import PhoneField from '../PhoneField/PhoneField.js';
 //productItem элемент массива products
 //product - контекст
 const PlaceOrder = observer(() => {
-const {basket} = useContext(Context);
+const {basket, errors} = useContext(Context);
 
 const placeOrder = () => {
     const products = basket.addProducts;
     const date = basket.date;
     const summa = basket.totalPrice;
     const phone = basket.phone;
-    console.log(phone)
-    createOrder(products, date, summa, phone).then(order => console.log(order));
+    createOrder(products, date, summa, phone).then(order => {
+        basket.setAllProducts = null;
+        console.log(order)
+    })
+    .catch(err => errors.setError(err))
 }
 
     return (

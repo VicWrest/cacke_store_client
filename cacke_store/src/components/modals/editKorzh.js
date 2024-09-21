@@ -10,6 +10,7 @@ const EditKorzh = observer(({show, onHide}) => {
 
     useEffect(()=> {
         getKorzhType().then(korzhs => product.setKorzh(korzhs))
+        .catch(err => errors.setError(err))
     }, []);
 
     const [korzh, setKorzh] = useState([]);

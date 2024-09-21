@@ -11,6 +11,7 @@ const CreateProduct = observer(({show, onHide}) => {
     const {product, errors} = useContext(Context)
     useEffect(()=> {
         getTypes().then(types => product.setTypes(types))
+        .catch(err => errors.setError(err))
     }, []);
     const [info, setInfo] = useState([])
     const [weight, setWeight] = useState([])
@@ -35,9 +36,6 @@ const CreateProduct = observer(({show, onHide}) => {
         setFile(e.target.files[0])
     }
     
-    const clearStateData = () => {
-
-    }
     const addNewProduct = () => {
         const formData = new FormData()
         formData.append('name', name)
