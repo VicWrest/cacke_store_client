@@ -46,7 +46,7 @@ const BasketProductItem = observer(({productItem}) => {
         <tbody className='product-item-basket'>
                 <tr className='product-item-basket'>
                         <th className='product-in-basket'>
-                                <div className='product-in-basket-img' style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL+productItem.img})`}}></div>
+                                <div className='product-in-basket-img' style={{ backgroundImage: `url(${process.env.REACT_APP_API_URL+productItem.product.img})`}}></div>
                                 <div className='name-and-korzh'>
                                 <div className='product-name-in-basket'>{productItem.product.name}</div>
                                 <SelectWeight productItem={{...productItem.product, weightId}} changeWeightId={setWeightId} updatePrice={setPrice} />

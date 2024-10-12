@@ -26,6 +26,7 @@ const App = observer(() => {
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
     })
+    .catch(e => alert(e.response))
     getKorzhType().then(data => {
       product.setKorzh(data)
     })
@@ -44,6 +45,7 @@ const App = observer(() => {
 //сделать, чтобы вылезало поверх
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
   return (
+      <div className="adaptive">
         <BrowserRouter>
         <NavBar/>
         {errors.isError && <ErrorAlert error={errors.error} show={errors.isError} onHide={() => errors.recessError()}/>}
@@ -55,6 +57,8 @@ const App = observer(() => {
         </ErrorBoundary>
         
       </BrowserRouter>
+      </div>
+        
   );
 })
 

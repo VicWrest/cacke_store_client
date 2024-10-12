@@ -16,8 +16,11 @@ const QuantityItem = observer(({product, setQuant}) => {
     }
 
     const decr = (body) => {
-        decrement(body).then(products => basket.setAllProducts(products))
-        .catch(err => errors.setError(err))
+        if(quantity - 1 > 0){
+            decrement(body).then(products => basket.setAllProducts(products))
+            .catch(err => errors.setError(err))
+        }
+        return;
         } 
 
     return (

@@ -55,6 +55,7 @@ const ProductCard = observer(({productItem}) => {
                 </div>
             </div>
             </div>
+            <div className='product-card-content'>
             <div className='descript'>{productItem.description}</div>
             <div className='parameters'>
                 <div className='parameters-string'>Характеристики</div>
@@ -64,6 +65,7 @@ const ProductCard = observer(({productItem}) => {
             </div>
             <div className='modal-complete-add-product'>
                 <CompleteAddProduct show={strVisible} onHide={()=> setStrVisible(false)}/>
+            </div>
             </div>
         </div>
           )

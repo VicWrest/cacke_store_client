@@ -26,7 +26,8 @@ const deleteProductById = () => {
 }
 
     return (
-        <div className='product-item'>
+        <div>
+             <div className='product-item'>
             <div 
             className='product-cart'
             onClick={()=> {
@@ -45,20 +46,24 @@ const deleteProductById = () => {
                     {productItem.name}
                 </div>    
                 <div className='price'>{productItem.weights[0].price}</div>
-            </div>
-            <Button 
+                <Button 
             className='add-btn' 
-            onClick={()=> {
+            onClick={(event)=> {
+                event.stopPropagation();
                 basket.addToBasket({productItem, korzhId})
                 setStrVisible(true);
             }}
             >
                     Добавить в корзину
             </Button>
+            </div>
+           
+        </div>
             <div className='modal-complete-add-product'>
                 <CompleteAddProduct show={strVisible} onHide={()=> setStrVisible(false)}/>
             </div>
         </div>
+       
         
     );
 });

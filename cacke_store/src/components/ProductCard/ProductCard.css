@@ -1,26 +1,37 @@
 
+.product-card{
+    display: grid;
+    grid-template-columns: repeat(1, 2fr);
+    grid-template-rows: auto auto;
+    width: 90vw;
+}
+
 .main{
-    display: flex;
+    display: grid;
+    height: 100%;
     background: #fafafa;
     padding: 15px 0;
+    grid-template-columns: 500px 2fr;
+    gap: 30px;
 }
 
 .card-img{
     flex-grow: 0.15;
-    width: 25%;
-    height: 25%;
     margin-left: 2%;
     margin-top: 2%;
     left: 120px;
     top: 160px;
+    max-width: 500px;
+    height: 100%;
 }
 .buy-block{
+    height: 40%;
     flex-grow: 0.15;
     padding: 1%;
-    width: 25%;
-    height: 10%;
+    margin-bottom: 25%;
     margin-left: 5%;
-    margin-top: 3%;
+    margin-right: 5%;
+    margin-top: 25%;
     border: 2px solid rgba(254, 91, 0, 1)
 }
 .short-descript{
@@ -67,7 +78,7 @@
 
 }
 .parameters{
-    width: 35%;
+    width: 39%;
     margin-left: 7%;
     margin-top: 1%;
 }

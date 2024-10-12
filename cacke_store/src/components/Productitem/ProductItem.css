@@ -1,6 +1,6 @@
 
 .product-item {
-   width: 20%;
+   width: 100%;
    text-align: center;
    margin: 0 auto;
    border-bottom: 2px solid #F5F5F5;
@@ -12,9 +12,14 @@
 .product-item:hover {
    border-bottom: 2px solid #fc5a5a;
 }
+.product-cart{
+   width: 100%;
+   height: 30vw;
+   
+}
 .product-img{
       width: 100%;
-      height: 400px;
+      height: 100%;
       background-repeat: no-repeat;
       background-size: cover;
 }
