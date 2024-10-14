@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { Context } from "../../../index.js";
-import { PostCard } from "../ReviewItem/ReviewItem";
+import { PostCard } from "../ReviewItem/ReviewItem.js";
 import React, { useState, useContext } from "react";
 
 
