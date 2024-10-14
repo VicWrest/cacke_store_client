@@ -15,7 +15,7 @@ export const PostCard = observer(({
       <div className='postContent'>
         <h2 className='username-in-review'>{authorName}</h2>
         <p className='comment-str'>Комментарии</p>
-        <p>{description}</p>
+        <p className='review-text'>{description}</p>
         {img &&
           <img className='review-img' src={`${process.env.REACT_APP_API_URL+img}`} onClick={()=> {setImgVisible(true)}}/> 
         }

@@ -7,32 +7,40 @@
 }
 
 .adaptive{
-    width: 1200px;
+    width: 100%;
     height: 100%;
-    margin: auto;
 }
 
-@media(max-width: 1200px){
-    .adaptive{
-        width: 1000px;
-        height: 100%;
-    }
+.root{
+    width: 100vw;
+}
+@media(min-width: 1200px){
     .main{
-        grid-template-columns: 350px 2fr;
+        grid-template-columns: 450px 2fr;
+        grid-template-rows: 650px 1fr;
+    }
+    .buy-block{
+        margin-left: 36px;
+        margin-right: 36px;
+        margin-top: 182px;
+        margin-bottom: 182px;
+    }
+    .card-img{
+        max-height: 690px;
+    }
+    
+}
+@media(max-width: 1200px){
+    .main{
+        grid-template-columns: 450px 2fr;
     }
     .buy-block{
         margin-right: 15%;
         height: 50%;
     }
+
     
 }
-
-/* @media(min-width: 1200px){
-    .main{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-} */
 
 @media(max-width: 972px){
     .type-item, .product-cart{
@@ -44,11 +52,25 @@
     .parameters-string{
         font-size: 33px;
     }
+    .my-basket-string{
+        font-size: 29px;
+    }
+    .reviews-str{
+        font-size: 27px;
+    }
+    .btn-outline-warning{
+        font-size: 17px;
+        height: auto;
+    }
+    .review-img{
+         height: 20vw;
+    }
 }
 
 @media(max-width: 840px){
     .main{
         grid-template-columns: 300px 2fr;
+        grid-template-rows: 300px 1fr;
     }
     .descript{
         font-size: 12px;
@@ -57,17 +79,22 @@
         width: 62%;
     }
     .buy-block{
-        height: 58%;
+        height: 83%;
+        margin-right: 2%;
+        margin-top: 11%;
+        margin-bottom: 2%;
+        margin-left: 3%;
     }
     .parameters-string{
         font-size: 29px;
     }
+    .review-img{
+        height: 25vw;
+   }
 
 }
 @media(max-width: 768px){
-    .adaptive{
-        width: 550px;
-    }
+
     .typeBar, .product-list{
         grid-template-columns: repeat(2, 1fr);
         gap: 40px;
@@ -75,17 +102,14 @@
     .type-item, .product-cart{
         height: 40vw;
     }
-    .product-card{
-        width: 90vw;
-    }
     .main{
         grid-template-columns: 200px 1fr;
         grid-template-rows: 260px 1fr;
         gap: 5px;
     }
     .buy-block{
-        height: 60%;
-        margin-right: 2%;
+        height: 80%;
+        margin-right: 20%;
         margin-top: 11%;
         margin-bottom: 2%;
         margin-left: 3%;
@@ -100,10 +124,14 @@
     hr{
         margin: 2%;
     }
-    .main-page, .type-page, .product-page, .short-descript, .add-btns1,
+    .main-page, .type-page, .product-page, .add-btns1,
     .select
     {
         line-height: 5px;
+        font-size: 12px;
+    }
+    .short-descript{
+        line-height: 14px;
         font-size: 12px;
     }
     .price{
@@ -119,8 +147,57 @@
         font-size: 24px;
         margin-bottom: 1%;
     }
+    .home-work-string{
+        font-size: 16px;
+    }
+    .review-navbar-btn, .basket-navbar-btn{
+        font-size: 13px;
+    }
+    .placing-in-order{
+        grid-row: 1/3;
+    }
+    .line{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .place-order-btn{
+        width: 225px;
+        height: 40px;
+        font-size: 12px;
+    }
+    .phone{
+        grid-row-start: 2;
+        grid-column-start: 1;
+        margin: auto;
+    }
+    .select-date{
+        margin: auto;
+    }
+    .my-basket-string{
+        font-size: 24px;
+    }
+    .go-back{
+        margin-left: 3%;
+    }
+    .reviews-str{
+        font-size: 24px;
+    }
+    .username-in-review{
+        font-size: 17px;
+    }
+    .comment-str {
+        font-size: 15px;
+    }
+    .review-text{
+        font-size: 14px;
+    }
+    .parametr-title {
+        font-size: 15px;
+        line-height: 16px;
+    }
+    .product-add-str{
+        font-size: 14px;
+    }
 
-    
 }
 
 @media(max-width: 600px){
@@ -128,18 +205,49 @@
         width: 85%;
     }
     .buy-block{
-        height: 58%;
+        height: 70%;
     }
     .parameters-string{
         font-size: 25px;
     }
+    .home-work-string{
+        width: 110px;
+    }
+    .go-to-shop{
+        font-size: 13px;
+    }
+    .go-back{
+        margin-left: 2%;
+    }
+    .reviews-str{
+        font-size: 21px;
+    }
+    .btn-outline-warning{
+        font-size: 14px;
+    }
+    .username-in-review{
+        font-size: 15px;
+    }
+    .comment-str {
+        font-size: 13px;
+    }
+    .review-text{
+        font-size: 12px;
+        margin-bottom: 0%;
+    }
+    .comment-str, .username-in-review {
+        margin-bottom: 0%;
+    }
+    .review {
+        padding: 8px;
+    }
+    .review-img{
+        height: 28vw;
+   }
 
 }
 
 @media(max-width: 480px){
-    .adaptive{
-        width: 480px;
-    }
     .typeBar, .product-list{
         width: 60vw;
         grid-template-columns: 1fr;
@@ -159,13 +267,9 @@
     }
     .buy-block{
         height: 95%;
-        margin-right: 2%;
+        margin: auto;
+        width: 85%;
         margin-top: 1%;
-        margin-bottom: 2%;
-        margin-left: 3%;
-    }
-    .product-card{
-        width: 90vw;
     }
     .main-page, .type-page, .product-page, .short-descript, .add-btns1,
     .select, .parameters
@@ -189,23 +293,147 @@
         padding-right: 20%;
         font-size: 20px;
     }
+    .home-work-string{
+        font-size: 13px;
+    }
+    .review-navbar-btn, .basket-navbar-btn{
+        font-size: 12px;
+        width: 90px;
+    }
+    .line{
+        width: 85%;
+        grid-template-columns: repeat(1, 1fr);
+        border: none;
+
+    }
+    .placing-in-order{
+        grid-row: 3/3;
+    }
+    .phone{
+        grid-row-start: 2; 
+        grid-column-start: 1;
+    }
+    th{
+        font-size: 11px;
+        padding: 0 0 0 10px;
+    }
+    .btn-less, .btn-more{
+        width: 23px;
+        height: 25px;
+    }
+    .quantity-rectangle{
+        width: 70px;
+        height: 30px;
+    }
+    .my-basket-string{
+        font-size: 19px;
+    }
+    .product-in-basket-img{
+        width: 20vw;
+        height: 24vw;
+    }
+    .itogo{
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .summa{
+        font-size: 16px;
+    }
+    .place-order-btn{
+        width: 138px;
+        height: 37px;
+        font-size: 11px;
+        border-radius: 6px;
+    }
+    .go-back{
+        margin-left: 1%;
+    }
+    .go-to-shop{
+        font-size: 10px;
+    }
+    .arrow{
+        margin-top: 1px;
+    }
+    .reviews-str{
+        font-size: 16px;
+    }
+    .btn-outline-warning{
+        font-size: 10px;
+        width: 95px;
+    }
+    .username-in-review{
+        font-size: 10px;
+    }
+    .comment-str {
+        font-size: 9px;
+    }
+    .review-text{
+        font-size: 9px;
+    }
+    .comment-str, .username-in-review {
+        margin-bottom: 0%;
+    }
+    .review {
+        margin-bottom: 1%;
+        border: 1px solid orangered;
+        margin-top: 6px;
+    }
+    .descript {
+        line-height: 22px
+    }
+    .parametr-title {
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .product-add-str{
+        font-size: 10px;
+    }
+    .modal-header {
+        padding: 7px 1rem;
+    }
+    .modal-title{
+        font-size: 15px;
+    }
+    .modal {
+        left: 35px;
+        z-index: 1050;
+        width: 83%;
+    }
+    .modal-body {
+        padding: 5px;
+    }
+    .form-label{
+        font-size: 13px;
+        margin-bottom: 0;
+    }
+    .form-control{
+        font-size: 13px;
+        margin-top: 0px;
+    }
+
+    .btn-outline-danger, .btn-outline-success{
+        font-size: 13px;
+    }
 }
 
 @media(max-width: 410px){
-    .adaptive{
-        width: 410px;
-    }
     .parameters-string{
         font-size: 17px;
     }
     .parameters{
         font-size: 8px;
     }
+    .my-basket-string{
+        font-size: 18px;
+    }
     
 }
 
 @media(max-width: 395px){
-    .adaptive{
-        width: 395px;
+    .main-page, .type-page, .product-page{
+        font-size: 10px;
+    }
+    .review-navbar-btn, .basket-navbar-btn{
+        width: 70px;
     }
 }

@@ -18,7 +18,7 @@ const PhoneField = observer(() => {
   const classes = useStyles();
   const {basket} = useContext(Context);
   return (
-    <div>
+    <div className='phone'>
       <FormControl className={classes.margin}>
         <InputLabel htmlFor="input-with-icon-adornment">Введите Ваш телефон</InputLabel>
         <Input

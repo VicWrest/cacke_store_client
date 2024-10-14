@@ -1,5 +1,6 @@
 .page-route{
     display: flex;
+    width: 100vw;
     margin-top: 2px;
     background: #FFFFFF;
     box-shadow: inset 0px -1px 0px #ECECEC;

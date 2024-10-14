@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import Modal from "react-bootstrap/Modal";
-import {Button, Form} from "react-bootstrap";
+import {Button, Container, Form} from "react-bootstrap";
 import {Context} from "../../index.js";
 import { createNewReview } from '../../http/reviewAPI.js';
 
@@ -31,6 +31,7 @@ const CreateReview = ({show, onHide}) => {
         formData.append('description', `${comment}`);
         formData.append('img', file)
         createNewReview(formData).then(async response => {
+            console.log(response)
             await review.addReviews(response);
             setName(initalValues.name);
             setComment(initalValues.comment);

@@ -26,7 +26,8 @@ const SelectDate = observer(() => {
     return;
   }
   return (
-    <form 
+    <div className='select-date'>
+        <form 
       className={classes.container} 
       onChange={(e)=> changeTime(e.target.value)} 
       noValidate>
@@ -41,6 +42,8 @@ const SelectDate = observer(() => {
             }}
       />
     </form>
+    </div>
+    
   );
 })
 

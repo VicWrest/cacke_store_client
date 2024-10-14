@@ -8,6 +8,9 @@
 .navbar{
     background: linear-gradient(90deg, rgb(255, 157, 129) 24.3%, rgb(255, 78, 78) 78.3%);
     height: 80px;
+    width: 100vw;
+    position: sticky;
+    top:0;
 }
 
 .review-navbar-btn, .basket-navbar-btn {

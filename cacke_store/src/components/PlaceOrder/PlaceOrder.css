@@ -1,7 +1,8 @@
 .line{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    height: auto;
     padding-top: 3px;
    margin-bottom: 90px;
 }
@@ -39,6 +40,6 @@
  .placing-in-order{
     display: flex;
     flex-direction: column;
-    align-items: center
+    align-items: center;
  }
  

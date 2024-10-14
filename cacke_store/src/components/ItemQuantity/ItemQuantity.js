@@ -25,13 +25,14 @@ const QuantityItem = observer(({product, setQuant}) => {
 
     return (
         <div className='quantity-product-cell'>
-            <div className='quantity-rectangle' style={{ backgroundImage: `url(${rectangle})`}}>
+            {/* <div className='quantity-rectangle' style={{ backgroundImage: `url(${rectangle})`}}> */}
+            <div className='quantity-rectangle'>
                 <div className='btn-less' style={
                     { backgroundImage: `url(${btnLess})`}}
                     onClick={() => {
                         setQuantity(quantity - 1 > 0? quantity - 1 : quantity)
                         setQuant(quantity);
-                        decr({productId: product.id, korzhId: product.korzhId, weightId: product.weightId})
+                        decr({productId: Number(product.productId), korzhId: product.korzhId, weightId: product.weightId})
                         return
                         }} ></div>
                 <div className='quantity-text'>{quantity}</div>
@@ -39,7 +40,7 @@ const QuantityItem = observer(({product, setQuant}) => {
                 onClick={() => {
                     setQuantity(quantity + 1);
                     setQuant(quantity);
-                    incr({productId: product.id, korzhId: product.korzhId, weightId: product.weightId});
+                    incr({productId: Number(product.productId), korzhId: product.korzhId, weightId: product.weightId});
                     return
                     }}></div>
             </div>

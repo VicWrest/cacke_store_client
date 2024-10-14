@@ -4,7 +4,7 @@
     margin-bottom: 2%;
     display: flex;
     padding: 15px;
-    border: 3px solid orangered;
+    border: 2px solid orangered;
     margin-top: 15px;
     justify-content: space-between;
     align-items: center;
@@ -24,8 +24,7 @@
 }
 .review-img{
     cursor: pointer;
-    width: 25%;
-    height: 25%;
+    height: 23vw;
     background-repeat: no-repeat;
     background-size: cover;
 }
