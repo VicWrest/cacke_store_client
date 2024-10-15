@@ -18,36 +18,35 @@ const App = observer(() => {
   const [isLoading, setIsLoading] = useState(true);
   const [userName, setUserName] = useState("Alena");
   
-//   useEffect(() => {
-//     //имя пользователя необходимо будет брать из телеграма
-//     registration(userName)
-//     .then((data) => {
-//       user.setUser(data);
-//       user.setIsAuth(true);
-//       if(data.role === "ADMIN")user.setIsAdmin(true)
-//     })
-//     .catch(e => alert(e.response))
-//     getKorzhType().then(data => {
-//       product.setKorzh(data)
-//     })
-//     .catch(e => alert(e.response))
-//     .finally(() => setIsLoading(false))
-// }, []);
+  useEffect(() => {
+    //имя пользователя необходимо будет брать из телеграма
+    registration(userName)
+    .then((data) => {
+      user.setUser(data);
+      user.setIsAuth(true);
+      if(data.role === "ADMIN")user.setIsAdmin(true)
+    })
+    .catch(e => alert(e.response))
+    getKorzhType().then(data => {
+      product.setKorzh(data)
+    })
+    .catch(e => alert(e.response))
+    .finally(() => setIsLoading(false))
+}, []);
 
-//   if(isLoading){
-//     return (
-//     <div className="spinner">
-//       <Spinner animation="border" variant="info" /> 
-//     </div>
-//   )
-// }
+  if(isLoading){
+    return (
+    <div className="spinner">
+      <Spinner animation="border" variant="info" /> 
+    </div>
+  )
+}
 //модальное окно с ошибкой скрывает основной интерфейс 
 //сделать, чтобы вылезало поверх
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
   return (
       <div className="adaptive">
-        <h1>HELLO!</h1>
-        {/* <BrowserRouter>
+        <BrowserRouter>
         <NavBar/>
         {errors.isError && <ErrorAlert error={errors.error} show={errors.isError} onHide={() => errors.recessError()}/>}
         <ErrorBoundary 
@@ -57,7 +56,7 @@ const App = observer(() => {
         <AppRouter/>
         </ErrorBoundary>
         
-      </BrowserRouter> */}
+      </BrowserRouter>
       </div>
         
   );
