@@ -50,7 +50,7 @@ const App = observer(() => {
   return (
       <div className="adaptive">
         <h2>
-          `username`+{tg?.user?.username}
+          `username`+{tg}
         </h2>
         <BrowserRouter>
         <NavBar/>
