@@ -50,7 +50,12 @@ const App = observer(() => {
   return (
       <div className="adaptive">
         <h2>
-          `username`+{tg}
+          `username`+
+            {Object.keys(tg).map(key => (
+              <div key={key} className="card-panel">
+                {tg[key]}
+              </div>
+            ))}
         </h2>
         <BrowserRouter>
         <NavBar/>
