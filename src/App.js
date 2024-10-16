@@ -58,7 +58,7 @@ const App = observer(() => {
         onReset={() => window.location.replace(SHOP_ROUTE)}
         >
            <h2>
-          `username`+
+          `username`+ {tgUser.username}+
             {Object.keys(tgUser).map(key => (
               <div key={key} className="card-panel">
                 {tg[key]}
