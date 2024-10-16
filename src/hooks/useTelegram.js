@@ -18,7 +18,7 @@ export function useTelegram(){
         onClose,
         onToggleButton,
         tg,
-        user: tg.initDataUnsafe?.user,
+        tgUser: tg.initDataUnsafe?.user,
         queryId: tg.initDataUnsafe?.query_id //уникальный id сеанса, необходим для передачи сообщений 
         //боту от имени пользователя 
     }

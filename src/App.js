@@ -15,7 +15,7 @@ import ErrorAlert from "./components/modals/ErrorAlert.js";
 import { useTelegram } from "./hooks/useTelegram.js";
 
 const App = observer(() => {
-  const {tg} = useTelegram();
+  const {tg, tgUser} = useTelegram();
   const {user, product, errors} = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
   const [userName, setUserName] = useState("Alena");
@@ -49,14 +49,7 @@ const App = observer(() => {
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
   return (
       <div className="adaptive">
-        <h2>
-          `username`+
-            {Object.keys(tg).map(key => (
-              <div key={key} className="card-panel">
-                {tg[key]}
-              </div>
-            ))}
-        </h2>
+       
         <BrowserRouter>
         <NavBar/>
         {errors.isError && <ErrorAlert error={errors.error} show={errors.isError} onHide={() => errors.recessError()}/>}
@@ -64,6 +57,14 @@ const App = observer(() => {
         FallbackComponent={ErrorFallback}
         onReset={() => window.location.replace(SHOP_ROUTE)}
         >
+           <h2>
+          `username`+
+            {Object.keys(tgUser).map(key => (
+              <div key={key} className="card-panel">
+                {tg[key]}
+              </div>
+            ))}
+        </h2>
         <AppRouter/>
         </ErrorBoundary>
         
