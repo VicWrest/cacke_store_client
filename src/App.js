@@ -18,12 +18,11 @@ const App = observer(() => {
   const {tg, tgUser} = useTelegram();
   const {user, product, errors} = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
-  const [userName, setUserName] = useState("Alena");
   
   useEffect(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
-    registration(userName)
+    registration(tgUser.username)
     .then((data) => {
       user.setUser(data);
       user.setIsAuth(true);
@@ -57,14 +56,6 @@ const App = observer(() => {
         FallbackComponent={ErrorFallback}
         onReset={() => window.location.replace(SHOP_ROUTE)}
         >
-           <h2>
-          `username`+ {tgUser.username}+
-            {Object.keys(tgUser).map(key => (
-              <div key={key} className="card-panel">
-                {tg[key]}
-              </div>
-            ))}
-        </h2>
         <AppRouter/>
         </ErrorBoundary>
         
