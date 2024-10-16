@@ -65,6 +65,9 @@
     .review-img{
          height: 20vw;
     }
+    .basket-is-empty{
+        font-size: 28px;
+    }
 }
 
 @media(max-width: 840px){
@@ -91,6 +94,9 @@
     .review-img{
         height: 25vw;
    }
+   .basket-is-empty{
+    font-size: 25px;
+}
 
 }
 @media(max-width: 768px){
@@ -197,6 +203,9 @@
     .product-add-str{
         font-size: 14px;
     }
+    .basket-is-empty{
+        font-size: 24px;
+    }
 
 }
 
@@ -244,6 +253,9 @@
     .review-img{
         height: 28vw;
    }
+   .basket-is-empty{
+    font-size: 21px;
+}
 
 }
 
@@ -414,6 +426,9 @@
     .btn-outline-danger, .btn-outline-success{
         font-size: 13px;
     }
+    .basket-is-empty{
+        font-size: 18px;
+    }
 }
 
 @media(max-width: 410px){
@@ -425,6 +440,9 @@
     }
     .my-basket-string{
         font-size: 18px;
+    }
+    .basket-is-empty{
+        font-size: 16px;
     }
     
 }
