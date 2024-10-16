@@ -12,13 +12,16 @@ import {ErrorBoundary} from 'react-error-boundary';
 import ErrorFallback from "./components/ErrorFallback.js";
 import { SHOP_ROUTE } from "./utils/consts.js";
 import ErrorAlert from "./components/modals/ErrorAlert.js";
+import { useTelegram } from "./hooks/useTelegram.js";
 
 const App = observer(() => {
+  const {tg} = useTelegram();
   const {user, product, errors} = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
   const [userName, setUserName] = useState("Alena");
   
   useEffect(() => {
+    tg.ready();
     //имя пользователя необходимо будет брать из телеграма
     registration(userName)
     .then((data) => {
@@ -46,6 +49,9 @@ const App = observer(() => {
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
   return (
       <div className="adaptive">
+        <h2>
+          {tg?.user?.username}
+        </h2>
         <BrowserRouter>
         <NavBar/>
         {errors.isError && <ErrorAlert error={errors.error} show={errors.isError} onHide={() => errors.recessError()}/>}

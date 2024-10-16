@@ -419,7 +419,7 @@
         margin-bottom: 0;
     }
     .form-control{
-        font-size: 13px;
+        font-size: 12px;
         margin-top: 0px;
     }
 
@@ -428,6 +428,12 @@
     }
     .basket-is-empty{
         font-size: 18px;
+    }
+    .form-check-label{
+        font-size: 13px;
+    }
+    .modal-footer {
+        padding: 3%;
     }
 }
 
