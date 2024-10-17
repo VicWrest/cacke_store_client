@@ -2,12 +2,12 @@ import axios from 'axios';
 
 //запросы для всех пользователей
 const $host = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
+    baseURL: '/host/'
 })
 
 //запросы для авторизованных пользователей
 const $authHost = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
+    baseURL: '/host/'
 });
 
 //интерцептор - функция для получения токена
