@@ -2,7 +2,7 @@ import {BrowserRouter, useNavigate} from "react-router-dom";
 import AppRouter from "./components/AppRouter.js"
 import NavBar from "./components/NavBar/NavBar.js";
 import { useContext, useEffect, useState } from "react";
-import { registration } from "./http/userAPI.js";
+import { registration, start } from "./http/userAPI.js";
 import { observer } from "mobx-react-lite";
 import { Context } from "./index.js";
 import { Spinner } from "react-bootstrap";
@@ -18,22 +18,26 @@ const App = observer(() => {
   const {tg, tgUser} = useTelegram();
   const {user, product, errors} = useContext(Context);
   const [isLoading, setIsLoading] = useState(true);
+  const [startStr, setStartStr] = useState('');
   
   useEffect(() => {
-    tg.ready();
-    //имя пользователя необходимо будет брать из телеграма
-    registration(tgUser?.username)
-    .then((data) => {
-      user.setUser(data);
-      user.setIsAuth(true);
-      if(data.role === "ADMIN")user.setIsAdmin(true)
-    })
-    .catch(e => alert(e.response))
+    // tg.ready();
+    // //имя пользователя необходимо будет брать из телеграма
+    // registration(tgUser?.username)
+    // .then((data) => {
+    //   user.setUser(data);
+    //   user.setIsAuth(true);
+    //   if(data.role === "ADMIN")user.setIsAdmin(true)
+    // })
+    // .catch(e => alert(e.response))
     getKorzhType().then(data => {
       product.setKorzh(data)
     })
     .catch(e => alert(e.response))
     .finally(() => setIsLoading(false))
+     start().then(h1 => {
+      console.log(h1)
+      setStartStr(h1)})
 }, []);
 
   if(isLoading){
@@ -48,7 +52,7 @@ const App = observer(() => {
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
   return (
       <div className="adaptive">
-       
+       {startStr}
         <BrowserRouter>
         <NavBar/>
         {errors.isError && <ErrorAlert error={errors.error} show={errors.isError} onHide={() => errors.recessError()}/>}

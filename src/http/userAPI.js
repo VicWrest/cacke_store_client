@@ -12,6 +12,15 @@ export const registration = async (userName) => {
     }
 };
 
+export const start = async () => {
+    try{
+        const {data} = await $authHost.get('/')
+        return data;
+    }
+    catch(e){
+        console.log(e);
+    }
+};
 //для моего проекта не нужна данная функция тк авторизация происходит автоматически,
 //при запуске приложения
 export const check = async () => {
