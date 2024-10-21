@@ -156,7 +156,7 @@
     .home-work-string{
         font-size: 16px;
     }
-    .review-navbar-btn, .basket-navbar-btn{
+    .review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
         font-size: 13px;
     }
     .placing-in-order{
@@ -308,7 +308,7 @@
     .home-work-string{
         font-size: 13px;
     }
-    .review-navbar-btn, .basket-navbar-btn{
+    .review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
         font-size: 12px;
         width: 90px;
     }
@@ -457,7 +457,7 @@
     .main-page, .type-page, .product-page{
         font-size: 10px;
     }
-    .review-navbar-btn, .basket-navbar-btn{
+    .review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
         width: 70px;
     }
 }

@@ -15,11 +15,19 @@ const NavBar = observer(() => {
             </div>
             <div className='navbar-buttons'>
             {user.isAdmin? 
+            <div className='client-navbar-btns'>
             <button 
-            className='review-navbar-btn'
+            className='admin-navbar-btn'
             onClick={() => history(ADMIN_ROUTE)}>
                 Админ панель
             </button>
+            <button className='review-navbar-btn' onClick={()=>history(REWIEW_ROUTE)}>
+                    Отзывы
+            </button>
+            <button className='basket-navbar-btn' onClick={()=>history(BASKET_ROUTE)}>
+            Корзина
+            </button>
+        </div>
             :
             <div className='client-navbar-btns'>
                 <button className='review-navbar-btn' onClick={()=>history(REWIEW_ROUTE)}>
