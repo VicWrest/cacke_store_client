@@ -6,6 +6,7 @@ import { Context } from '../index';
 
 const AppRouter = () => {
     const {user} = useContext(Context)
+    console.log(user.isAdmin)
     return (
       <Routes>
       {user.isAdmin && adminRoutes.map(({path, Component}) =>
