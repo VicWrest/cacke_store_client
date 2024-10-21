@@ -4,6 +4,7 @@ import { ADMIN_ROUTE, BASKET_ROUTE, REWIEW_ROUTE, SHOP_ROUTE } from '../../utils
 import {useNavigate} from "react-router-dom";
 import { observer } from 'mobx-react-lite';
 import './NavBar.css'
+import MobileMenu from '../Mobile-menu/Mobile-menu';
 
 const NavBar = observer(() => {
     const {user} = useContext(Context)
@@ -15,7 +16,8 @@ const NavBar = observer(() => {
             </div>
             <div className='navbar-buttons'>
             {user.isAdmin? 
-            <div className='client-navbar-btns'>
+            <div className='navbar-btns'> 
+                <div className='client-navbar-btns'>
             <button 
             className='admin-navbar-btn'
             onClick={() => history(ADMIN_ROUTE)}>
@@ -27,7 +29,11 @@ const NavBar = observer(() => {
             <button className='basket-navbar-btn' onClick={()=>history(BASKET_ROUTE)}>
             Корзина
             </button>
-        </div>
+                </div>
+                <MobileMenu  />
+            </div>
+
+            
             :
             <div className='client-navbar-btns'>
                 <button className='review-navbar-btn' onClick={()=>history(REWIEW_ROUTE)}>

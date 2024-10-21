@@ -1,0 +1,42 @@
+.menu-button{
+    display: none;
+    width: 20px;
+    height: 20px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+}
+.mobile-menu{
+    display: none;
+}
+ul{
+    width: 100%;
+}
+.navbar-nav.active{
+    transform: translateX(100%);
+}
+.navbar-nav {
+    position: fixed;
+    top: 0;
+    left: -34%;
+    right: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    width: 34%;
+    height: 100%;
+    transition: transform 0.3s linear;
+}
+
+.navbar-nav-list {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 78px;
+    padding-right: 1%;
+}
+
+.review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
+    margin: 2% 0;
+    margin-left: 0;
+}

@@ -256,9 +256,13 @@
    .basket-is-empty{
     font-size: 21px;
 }
-
+    .client-navbar-btns{
+        display: none;
+    }
+    .menu-button, .mobile-menu{
+        display: block;
+    }
 }
-
 @media(max-width: 480px){
     .typeBar, .product-list{
         width: 60vw;
@@ -310,7 +314,7 @@
     }
     .review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
         font-size: 12px;
-        width: 90px;
+        width: 100%;
     }
     .line{
         width: 85%;
@@ -456,8 +460,5 @@
 @media(max-width: 395px){
     .main-page, .type-page, .product-page{
         font-size: 10px;
-    }
-    .review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn{
-        width: 70px;
     }
 }
