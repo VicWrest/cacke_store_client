@@ -13,7 +13,7 @@
     top:0;
 }
 
-.review-navbar-btn, .basket-navbar-btn {
+.review-navbar-btn, .basket-navbar-btn, .admin-navbar-btn {
     text-decoration: none;
     display: inline-block;
     padding: 0 12px;
@@ -29,6 +29,6 @@
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color:rgb(252, 248, 245);
  }
-.basket-navbar-btn:hover, .review-navbar-btn:hover{
+.basket-navbar-btn:hover, .review-navbar-btn:hover, .admin-navbar-btn{
     background: #fc5a5a;
  }
