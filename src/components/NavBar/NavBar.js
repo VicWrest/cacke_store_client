@@ -17,9 +17,7 @@ const NavBar = observer(() => {
             {user.isAdmin? 
             <button 
             className='review-navbar-btn'
-            onClick={() => {
-                console.log(`onClick event`)
-                history(ADMIN_ROUTE)}} >
+            onClick={() => history(ADMIN_ROUTE)}>
                 Админ панель
             </button>
             :
