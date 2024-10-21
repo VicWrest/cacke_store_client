@@ -2,9 +2,10 @@ import {Route, Routes, Navigate} from 'react-router-dom'
 import {adminRoutes, publicRoutes} from "../routes";
 import { useContext } from 'react';
 import { Context } from '../index';
+import { observer } from 'mobx-react-lite';
 //import {observer} from "mobx-react-lite";
 
-const AppRouter = () => {
+const AppRouter = observer(() => {
     const {user} = useContext(Context)
     console.log(user.isAdmin)
     return (
@@ -18,6 +19,6 @@ const AppRouter = () => {
         <Route path="*" element={<Navigate to ="/" />}/>
         </Routes>
     );
-};
+});
 
 export default AppRouter;
