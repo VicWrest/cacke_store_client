@@ -1,18 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import "./Mobile-menu.css"
 import menuButton from '../../assets/menu-button.png';
 import { ADMIN_ROUTE, BASKET_ROUTE, REWIEW_ROUTE } from '../../utils/consts';
 import { useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import {Context} from "../../index";
+import { useClickOutside } from '../../hooks/useClickOutside';
 
 const MobileMenu = observer((props) => {
     const {user} = useContext(Context)
     const history = useNavigate()
     const [isOpen, setOpen] = useState();
+    const menuRef = useRef(null);
+    useClickOutside(menuRef, () => {
+        if(isOpen){
+            setTimeout(() => setOpen(false), 50)
+        }
+    })
+
     return (
         <div className='mobile-menu'>
-            <nav className={`navbar-nav ${isOpen? "active" : ''}`}>
+            <nav 
+            ref={menuRef}
+            className={`navbar-nav ${isOpen? "active" : ''}`}>
                 <ul className='navbar-nav-list'>
                     {user.isAdmin && 
                         <button 

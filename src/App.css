@@ -277,7 +277,7 @@
         gap: 10px;
     }
     .card-img{
-        max-width: 200px;
+        max-width: 210px;
         margin: auto;
         width: 50vw;
     }
@@ -345,7 +345,7 @@
         font-size: 19px;
     }
     .product-in-basket-img{
-        width: 20vw;
+        width: 18vw;
         height: 24vw;
     }
     .itogo{
@@ -439,6 +439,15 @@
     .modal-footer {
         padding: 3%;
     }
+    .basket-window {
+        display: flex;
+        justify-content: center;
+        background: #FFFFFF;
+        border: 1px solid #E3E3E3;
+        border-radius: 2px;
+        width: 98%;
+        margin-bottom: 10px;
+    }
 }
 
 @media(max-width: 410px){
@@ -460,5 +469,16 @@
 @media(max-width: 395px){
     .main-page, .type-page, .product-page{
         font-size: 10px;
+    }
+    .productList {
+        width: 100%;
+        text-align: center;
+    }
+    th {
+        font-size: 10px;
+        padding: 0 0 0 0px;
+    }
+    .product-in-basket {
+        justify-content: space-evenly;
     }
 }
