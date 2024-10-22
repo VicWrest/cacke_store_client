@@ -7,7 +7,7 @@
       cursor: pointer;
 }
 .mobile-menu{
-    display: none;
+    display: block;
 }
 ul{
     width: 100%;
