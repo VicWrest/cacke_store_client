@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const CompleteAddProduct = ({show, onHide}) => {
     useEffect(()=> {
-        setTimeout(onHide, 2800)
+        // setTimeout(onHide, 2800)
     })
     return (
         <Modal
