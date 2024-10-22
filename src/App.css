@@ -14,6 +14,9 @@
 .root{
     width: 100vw;
 }
+.product-add-str{
+    text-align: center;
+}
 @media(min-width: 1200px){
     .main{
         grid-template-columns: 450px 2fr;
