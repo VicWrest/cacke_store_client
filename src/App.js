@@ -23,7 +23,7 @@ const App = observer(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
     //tgUser?.username
-    registration(`Alena_ts_1997`)
+    registration(`user`)
     .then((data) => {
       user.setUser(data);
       user.setIsAuth(true);
