@@ -23,8 +23,9 @@ const App = observer(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
     //tgUser?.username
-    registration(`user`)
+    registration(`vic_wrest`)
     .then((data) => {
+      console.log(user);
       user.setUser(data);
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
