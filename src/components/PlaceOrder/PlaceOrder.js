@@ -28,11 +28,10 @@ const placeOrder = () => {
 
     return (
         <div className='line'>
-                <div>query_id{queryId}</div>
                 <SelectDate />
                 <PhoneField  />
                 <div className='placing-in-order'> 
-                    <div className='itogo' >Итого</div>
+                    <div className='itogo' >{queryId}</div>
                     <div className='summa'>{basket.totalPrice}</div>
                     <Button 
                     className='place-order-btn'
