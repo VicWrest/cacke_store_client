@@ -19,7 +19,7 @@ export function useTelegram(){
         onToggleButton,
         tg,
         tgUser: tg.initDataUnsafe?.user,
-        queryId: tg.initDataUnsafe?.query_id 
+        queryId: tg.initDataUnsafe?.query_id
         //уникальный id сеанса, необходим для передачи сообщений 
         //боту от имени пользователя 
     }

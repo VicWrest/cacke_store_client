@@ -12,14 +12,15 @@ import { useTelegram } from '../../hooks/useTelegram.js';
 //product - контекст
 const PlaceOrder = observer(() => {
 const {basket, errors} = useContext(Context);
-const {queryId} = useTelegram();
+const {queryId, tgUser} = useTelegram();
 
 const placeOrder = () => {
     const products = basket.addProducts;
     const date = basket.date;
     const summa = basket.totalPrice;
     const phone = basket.phone;
-    createOrder({products, date, summa, phone, queryId}).then(order => {
+    const chatId = tgUser?.id;
+    createOrder({products, date, summa, phone, queryId, chatId}).then(order => {
         basket.setAllProducts = null;
         console.log(order)
     })
@@ -31,7 +32,7 @@ const placeOrder = () => {
                 <SelectDate />
                 <PhoneField  />
                 <div className='placing-in-order'> 
-                    <div className='itogo' >{queryId}</div>
+                    <div className='itogo' >Итого</div>
                     <div className='summa'>{basket.totalPrice}</div>
                     <Button 
                     className='place-order-btn'
