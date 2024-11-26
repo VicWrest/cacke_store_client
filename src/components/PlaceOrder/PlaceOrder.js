@@ -6,18 +6,20 @@ import Button from "../Button/Button.js"
 import SelectDate from '../SelectDate/SelectDate.js'
 import { createOrder, deleteAllProducts } from '../../http/productAPI.js';
 import PhoneField from '../PhoneField/PhoneField.js';
+import { useTelegram } from '../../hooks/useTelegram.js';
 
 //productItem элемент массива products
 //product - контекст
 const PlaceOrder = observer(() => {
 const {basket, errors} = useContext(Context);
+const {queryId} = useTelegram();
 
 const placeOrder = () => {
     const products = basket.addProducts;
     const date = basket.date;
     const summa = basket.totalPrice;
     const phone = basket.phone;
-    createOrder(products, date, summa, phone).then(order => {
+    createOrder(products, date, summa, phone, queryId).then(order => {
         basket.setAllProducts = null;
         console.log(order)
     })
