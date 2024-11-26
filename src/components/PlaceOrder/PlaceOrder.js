@@ -19,7 +19,7 @@ const placeOrder = () => {
     const date = basket.date;
     const summa = basket.totalPrice;
     const phone = basket.phone;
-    createOrder(products, date, summa, phone, queryId).then(order => {
+    createOrder({products, date, summa, phone, queryId}).then(order => {
         basket.setAllProducts = null;
         console.log(order)
     })

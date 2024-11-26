@@ -93,8 +93,8 @@ export const deleteAllProducts = async () => {
     return data;
 }
 
-export const createOrder = async (products, date, summa, phone) => {
-    const {data} = await $authHost.post('api/order/',  {products, date, summa, phone}, {withCredentials: true})
+export const createOrder = async (data) => {
+    const {data} = await $authHost.post('api/order/',  {data}, {withCredentials: true})
     return data;
 }
 
