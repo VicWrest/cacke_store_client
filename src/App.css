@@ -323,8 +323,11 @@
         grid-template-rows: 1fr auto auto;
     }
     .parameters{
-        width: 100%;
+        width: 97%;
         margin-left: 5%;
+    }
+    .parameters-table {
+        width: 63%;
     }
     .parameters-string{
         padding-right: 20%;
@@ -421,6 +424,7 @@
     .parametr-title {
         font-size: 15px;
         line-height: 20px;
+        text-align: left;
     }
     .product-add-str{
         font-size: 10px;
