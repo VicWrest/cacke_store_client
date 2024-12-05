@@ -199,12 +199,7 @@
     .review-text{
         font-size: 14px;
     }
-    .parametr-title {
-        font-size: 15px;
-        line-height: 20px;
-        text-align: left;
-        width: 37%;
-    }
+
     .product-add-str{
         font-size: 14px;
         text-align: center;
@@ -329,7 +324,7 @@
         margin-left: 5%;
     }
     .parameters-table {
-        width: 63%;
+        width: 93%;
     }
     .parameters-string{
         padding-right: 20%;
@@ -427,6 +422,7 @@
         font-size: 15px;
         line-height: 20px;
         text-align: left;
+        width: 37%;
     }
     .parametr-description, .parametr-title { 
         line-height: 28px;
