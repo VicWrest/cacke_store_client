@@ -281,7 +281,8 @@
     }
     .product-name {
         margin-top: 0%;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 30px;
     }
     .main{
         grid-template-columns: 1fr;
