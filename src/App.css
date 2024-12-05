@@ -271,10 +271,16 @@
     .typeBar, .product-list{
         width: 60vw;
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
     }
     .type-item, .product-cart{
-        height: 60vw;
+        height: 87vw;
+    }
+    .product-img {
+        height: 67%;
+    }
+    .product-name {
+        margin-top: 0%;
     }
     .main{
         grid-template-columns: 1fr;
@@ -298,6 +304,13 @@
     }
     .price{
         font-size: 20px;
+        line-height: 27px;
+    }
+    .button {
+        padding: 6px;
+    }
+    .product-item {
+        padding: 2px 0;
     }
     .weight, .korzh{
         margin-bottom: 2%;
