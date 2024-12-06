@@ -4,21 +4,19 @@ import { observer } from 'mobx-react-lite';
 
 const SelectWeight = observer(({productItem, updatePrice, changeWeightId}) => {
 
-    // const [weightId, setWeightId] = useState(productItem?.weightId || productItem.weights[0].id); 
-    const [weightId, setWeightId] = useState(productItem.weights[0].id); 
+    const [weightId, setWeightId] = useState(productItem?.weightId || productItem.weights[0].id); 
 
     useEffect(()=>{
         getPrice(productItem.weights)
     }, [weightId]);
     
     const getPrice = (weights) => {
-        const arr = weights.find(el => {
-            console.log(el.id, weightId)
-            console.log(el.id == weightId)
-            return el.id == weightId
-        });
-        console.log(arr)
-        const price = arr.price;
+        // const price = weights.find(el => el.id == weightId).price;
+        const price = undefined;
+        if(price === undefined){
+            price = weights[0].price;
+        }
+        console.log(price)
         changeWeightId(weightId)
         updatePrice(price)
         return
