@@ -329,6 +329,8 @@
     .parameters-string{
         padding-right: 20%;
         font-size: 20px;
+        margin-bottom: 3%;
+
     }
     .home-work-string{
         font-size: 13px;
@@ -424,8 +426,15 @@
         text-align: left;
         width: 37%;
     }
+    tr{
+        border-bottom: 1px solid grey;
+        border-top: 1px solid grey;
+    }
     .parametr-description, .parametr-title { 
-        line-height: 28px;
+        font-family: 'Times New Roman', Times, serif;
+        line-height: 17px;
+        font-size: 13px;
+        text-align: left;
     }
     .product-add-str{
         font-size: 10px;
