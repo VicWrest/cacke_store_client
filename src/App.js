@@ -22,7 +22,8 @@ const App = observer(() => {
   useEffect(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
-    registration(tgUser?.username)
+    // registration(tgUser?.username)
+    registration('vic_wrest')
     .then((data) => {
       user.setUser(data);
       user.setIsAuth(true);
