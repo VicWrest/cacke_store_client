@@ -58,7 +58,7 @@ const ProductCard = observer(({productItem}) => {
             <div className='product-card-content'>
             <div className='descript'>{productItem.description}</div>
             <div className='parameters'>
-                <div className='parameters-string'>Характеристики</div>
+                {productItem.info.length > 0 && <div className='parameters-string'>Характеристики</div>}
                 <table className='parameters-table'>
                     {productItem.info.map(el => <ProductCharacteristic key={el.id} param={el} />)}
                 </table>
