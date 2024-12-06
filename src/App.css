@@ -418,7 +418,8 @@
         margin-top: 6px;
     }
     .descript {
-        line-height: 22px
+        line-height: 22px;
+        width: 92%;
     }
     .parametr-title {
         font-size: 15px;
