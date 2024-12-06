@@ -4,7 +4,8 @@ import { observer } from 'mobx-react-lite';
 
 const SelectWeight = observer(({productItem, updatePrice, changeWeightId}) => {
 
-    const [weightId, setWeightId] = useState(productItem?.weightId || productItem.weights[0].id); 
+    // const [weightId, setWeightId] = useState(productItem?.weightId || productItem.weights[0].id); 
+    const [weightId, setWeightId] = useState(productItem.weights[0].id); 
 
     useEffect(()=>{
         getPrice(productItem.weights)
