@@ -15,7 +15,6 @@ const SelectWeight = observer(({productItem, updatePrice, changeWeightId}) => {
         if(price === undefined){
             price = weights[0].price;
         }
-        console.log(price)
         changeWeightId(weightId)
         updatePrice(price)
         return
