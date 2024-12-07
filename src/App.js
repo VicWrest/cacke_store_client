@@ -49,6 +49,7 @@ const App = observer(() => {
     </div>
   )
 }
+//<AppRouter/>
 //модальное окно с ошибкой скрывает основной интерфейс 
 //сделать, чтобы вылезало поверх
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
@@ -61,7 +62,7 @@ const App = observer(() => {
         FallbackComponent={ErrorFallback}
         onReset={() => window.location.replace(SHOP_ROUTE)}
         >
-        <AppRouter/>
+        
         </ErrorBoundary>
         
       </BrowserRouter>
