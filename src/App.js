@@ -22,21 +22,23 @@ const App = observer(() => {
   useEffect(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
-    // registration(tgUser?.username)
-    registration('qwe123')
+    registration(tgUser?.username)
+    // registration('qwe123')
     .then((data) => {
+      alert(`ALL GOOD`)
       console.log(data);
       user.setUser(data);
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
     })
     .catch(e => {
-      console.log(e)
-      alert(e.response)})
+      alert(`ERROR`)
+      // alert(e.response)
+      })
     getKorzhType().then(data => {
       product.setKorzh(data)
     })
-    .catch(e => alert(e.response))
+    .catch(e => alert(`CATCH getKorzh`))
     .finally(() => setIsLoading(false))
 }, []);
 
