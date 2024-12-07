@@ -24,7 +24,7 @@ const App = observer(() => {
     //имя пользователя необходимо будет брать из телеграма
     alert(tgUser?.username);
     // registration(tgUser?.username)
-    registration('qwe1234567')
+    registration('qwe12345678')
     .then((data) => {
       alert(`ALL GOOD`)
       console.log(data);
