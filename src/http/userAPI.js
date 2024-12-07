@@ -8,8 +8,8 @@ export const registration = async (userName) => {
         return jwtDecode(data.token);
     }
     catch(e){
-        alert(`ERROR BY Registration`)
-        // alert(e?.response?.statusText);
+        // alert(`ERROR BY Registration`)
+        alert(e?.response?.statusText);
     }
 };
 //для моего проекта не нужна данная функция тк авторизация происходит автоматически,

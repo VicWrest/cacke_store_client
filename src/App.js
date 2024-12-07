@@ -22,24 +22,20 @@ const App = observer(() => {
   useEffect(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
-    alert(tgUser?.username);
     registration(tgUser?.username)
     // registration('qwe12345678')
     .then((data) => {
-      alert(`ALL GOOD`)
-      console.log(data);
       user.setUser(data);
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
     })
     .catch(e => {
-      alert(`ERROR`)
-      // alert(e.response)
+      alert(e.response)
       })
     getKorzhType().then(data => {
       product.setKorzh(data)
     })
-    .catch(e => alert(`CATCH getKorzh`))
+    .catch(e => alert(e.response))
     .finally(() => setIsLoading(false))
 }, []);
 
@@ -50,7 +46,7 @@ const App = observer(() => {
     </div>
   )
 }
-//<AppRouter/>
+
 //модальное окно с ошибкой скрывает основной интерфейс 
 //сделать, чтобы вылезало поверх
 //разделить ошибки на 2 категории: в виде всплывающего окна и в виде нового окна 
@@ -63,7 +59,7 @@ const App = observer(() => {
         FallbackComponent={ErrorFallback}
         onReset={() => window.location.replace(SHOP_ROUTE)}
         >
-        
+        <AppRouter/>
         </ErrorBoundary>
         
       </BrowserRouter>
