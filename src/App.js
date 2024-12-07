@@ -22,15 +22,17 @@ const App = observer(() => {
   useEffect(() => {
     tg.ready();
     //имя пользователя необходимо будет брать из телеграма
-    registration(tgUser?.username)
-    // registration('vic_wrest')
+    // registration(tgUser?.username)
+    registration('qwe123')
     .then((data) => {
       console.log(data);
       user.setUser(data);
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
     })
-    .catch(e => alert(e.response))
+    .catch(e => {
+      console.log(e)
+      alert(e.response)})
     getKorzhType().then(data => {
       product.setKorzh(data)
     })
