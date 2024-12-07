@@ -11,7 +11,7 @@ const SelectWeight = observer(({productItem, updatePrice, changeWeightId}) => {
     }, [weightId]);
     
     const getPrice = (weights) => {
-        const price = weights.find(el => el.id == weightId)?.price;
+        let price = weights.find(el => el.id == weightId)?.price;
         if(price === undefined){
             price = weights[0].price;
         }
