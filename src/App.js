@@ -25,6 +25,7 @@ const App = observer(() => {
     registration(tgUser?.username)
     // registration('vic_wrest')
     .then((data) => {
+      console.log(data);
       user.setUser(data);
       user.setIsAuth(true);
       if(data.role === "ADMIN")user.setIsAdmin(true)
